@@ -15,30 +15,36 @@ preload[4] = "../assets/kaprint-lady.jpg";
 preload[5] = "../assets/ibom-plaza-illustration.jpg";
 
 
-
+const imageElement = str=>`<img src=${str} >`;
 navList.addEventListener("mouseover", e=>{
   if(e.target.matches('a[data-input="home"]')){
-    navImage.src = preload[0];
+    navImageContainer.innerHTML = imageElement(preload[0]);
+    setTimeout(() =>navImageContainer.lastElementChild.setAttribute("class", "zoom-out"), 10);
     e.target.classList.add("nav-color");
   }
   if(e.target.matches('a[data-input="about"]')){
-        navImage.src = preload[1];
+    navImageContainer.innerHTML = imageElement(preload[1]);
+    setTimeout(() =>navImageContainer.lastElementChild.setAttribute("class", "zoom-out"),10);
     e.target.classList.add("nav-color");
   }
   if(e.target.matches('a[data-input="services"]')){
-     navImage.src = preload[2];
+    navImageContainer.innerHTML = imageElement(preload[2]);
+    setTimeout(() =>navImageContainer.lastElementChild.setAttribute("class", "zoom-out"),10);
     e.target.classList.add("nav-color");
   }
   if(e.target.matches('a[data-input="studio"]')){
-    navImage.src = preload[3];
+    navImageContainer.innerHTML = imageElement(preload[3]);
+    setTimeout(() =>navImageContainer.lastElementChild.setAttribute("class", "zoom-out"),10);
     e.target.classList.add("nav-color");
   }
   if(e.target.matches('a[data-input="kaprint"]')){
-    navImage.src = "../assets/kaprint-lady.jpg";
+    navImageContainer.innerHTML = imageElement(preload[4]);
+    setTimeout(() =>navImageContainer.lastElementChild.setAttribute("class", "zoom-out"),10);
     e.target.classList.add("nav-color");
   }
   if(e.target.matches('a[data-input="contact"]')){
-    navImage.src = preload[5];
+    navImageContainer.innerHTML = imageElement(preload[5]);
+    setTimeout(() =>navImageContainer.lastElementChild.setAttribute("class", "zoom-out"),10);
     e.target.classList.add("nav-color");
   }
 })
@@ -77,12 +83,13 @@ checkBox.addEventListener("click", event=>{
 const checkNavigation = (entries)=>{
   entries.forEach(entry => {
     if(entry.isIntersecting && navList.offsetLeft<=1 && checkBox.checked){
-      navImageContainer.style.display="block"
-      console.log(navList.offsetLeft<= 2)
+      navImageContainer.style.display="block";
+      navImageContainer.innerHTML = imageElement(preload[0]);
+      setTimeout(() =>navImageContainer.lastElementChild.setAttribute("class", "zoom-out"), 10);
+    e.target.classList.add("nav-color");
     }
     if(entry.isIntersecting && navList.offsetLeft<= 1 && !checkBox.checked){
       navImageContainer.style.display="none"
-      console.log("We are leaving")
     }
   });
 }
