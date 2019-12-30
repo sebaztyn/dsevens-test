@@ -86,7 +86,7 @@ const checkNavigation = (entries)=>{
       navImageContainer.style.display="block";
       navImageContainer.innerHTML = imageElement(preload[0]);
       setTimeout(() =>navImageContainer.lastElementChild.setAttribute("class", "zoom-out"), 10);
-    e.target.classList.add("nav-color");
+    document.querySelector(".hamburger>ul>li a").classList.add("nav-color");
     }
     if(entry.isIntersecting && navList.offsetLeft<= 1 && !checkBox.checked){
       navImageContainer.style.display="none"

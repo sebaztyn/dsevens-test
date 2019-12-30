@@ -675,13 +675,13 @@ body {
 }
 
 .header-images>figure:first-of-type>div:first-of-type {
-  background-image: url("./assets/slides/slide-1.jpg");
+  background-image: url("../assets/slides/slide-1.jpg");
 }
 
 .header-images>figure:nth-of-type(2)>div:first-of-type {
-  background-image: url("./assets/the-roothub-start-learnng.jpg");
+  background-image: url("../assets/the-roothub-start-learnng.jpg");
 }
 
 .header-images>figure:nth-of-type(3)>div:last-of-type {
-  background-image: url("./assets/lady-in-the-night.jpeg");
+  background-image: url("../assets/lady-in-the-night.jpeg");
 }
