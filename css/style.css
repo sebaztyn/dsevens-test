@@ -3,9 +3,19 @@
   src: url('./fonts/Oswald-VariableFont_wght.ttf');
 }
 
-body {
+:root {
+  box-sizing: border-box;
+  --main-font: Raleway, Roboto, sans-serif;
+  --primary-color: #193441;
+  --complimentary-color: #F0673A;
+}
+
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 .home-header {
