@@ -1,6 +1,5 @@
 const navList = document.querySelector(".hamburger>ul")
 const checkBox = document.querySelector(".hamburger>input")
-const navObject = navList.getBoundingClientRect();
 const navImage = document.querySelector("#nav-images")
 const navImageContainer = document.querySelector(".hamburger>div")
 
@@ -69,9 +68,6 @@ navList.addEventListener("mouseout", e=>{
   }
 })
 
-// navList.addEventListener("animationend", event=>{
-//   console.log('WORKED!!!!!!!')
-// })
 checkBox.addEventListener("click", event=>{
   if(checkBox.checked){
     navList.classList.remove("unchecked")
@@ -81,29 +77,24 @@ checkBox.addEventListener("click", event=>{
 })
 
 const checkNavigation = (entries)=>{
-  const homepage = document.querySelector("body.home-page");
-  const aboutpage = document.querySelector("body.about-page");
-
+  const aboutpage = document.querySelector(".about-nav-menu")
   entries.forEach(entry => {
-    if(entry.isIntersecting && navList.offsetLeft<= 1 && !checkBox.checked){
-      return navImageContainer.style.display="none";
-    }
-
     if(entry.isIntersecting && navList.offsetLeft<=1 && checkBox.checked){
       navImageContainer.style.display="block";
 
-      if(homepage){
         navImageContainer.innerHTML = imageElement(preload[0]);
         setTimeout(() =>navImageContainer.lastElementChild.setAttribute("class", "zoom-out"), 10);
-       return  document.querySelector(".hamburger>ul>li:first-of-type a").classList.add("nav-color");
-      }
+         document.querySelector(".hamburger>ul>li:first-of-type a").classList.add("nav-color");
 
       if(aboutpage){
         navImageContainer.innerHTML = imageElement(preload[1]);
         setTimeout(() =>navImageContainer.lastElementChild.setAttribute("class", "zoom-out"), 10);
-        return document.querySelector(".hamburger>ul>li:nth-of-type(2) a").classList.add("nav-color");
+           document.querySelector(".hamburger>ul>li:nth-of-type(2) a").classList.add("nav-color");
     }
   }
+  if(entry.isIntersecting && navList.offsetLeft<= 1 && !checkBox.checked){
+       navImageContainer.style.display="none";
+    }
 });
 }
 
