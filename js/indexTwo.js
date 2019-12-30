@@ -81,17 +81,30 @@ checkBox.addEventListener("click", event=>{
 })
 
 const checkNavigation = (entries)=>{
+  const homepage = document.querySelector("body.home-page");
+  const aboutpage = document.querySelector("body.about-page");
+
   entries.forEach(entry => {
+    if(entry.isIntersecting && navList.offsetLeft<= 1 && !checkBox.checked){
+      return navImageContainer.style.display="none";
+    }
+
     if(entry.isIntersecting && navList.offsetLeft<=1 && checkBox.checked){
       navImageContainer.style.display="block";
-      navImageContainer.innerHTML = imageElement(preload[0]);
-      setTimeout(() =>navImageContainer.lastElementChild.setAttribute("class", "zoom-out"), 10);
-    document.querySelector(".hamburger>ul>li a").classList.add("nav-color");
+
+      if(homepage){
+        navImageContainer.innerHTML = imageElement(preload[0]);
+        setTimeout(() =>navImageContainer.lastElementChild.setAttribute("class", "zoom-out"), 10);
+       return  document.querySelector(".hamburger>ul>li:first-of-type a").classList.add("nav-color");
+      }
+
+      if(aboutpage){
+        navImageContainer.innerHTML = imageElement(preload[1]);
+        setTimeout(() =>navImageContainer.lastElementChild.setAttribute("class", "zoom-out"), 10);
+        return document.querySelector(".hamburger>ul>li:nth-of-type(2) a").classList.add("nav-color");
     }
-    if(entry.isIntersecting && navList.offsetLeft<= 1 && !checkBox.checked){
-      navImageContainer.style.display="none"
-    }
-  });
+  }
+});
 }
 
 const navObserve = new IntersectionObserver(checkNavigation, {threshold: 1.0})
