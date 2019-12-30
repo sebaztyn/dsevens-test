@@ -79,7 +79,7 @@ checkBox.addEventListener("click", event=>{
 const checkNavigation = (entries)=>{
   const aboutpage = document.querySelector(".about-nav-menu")
   entries.forEach(entry => {
-    if(entry.isIntersecting && navList.offsetLeft<=1 && checkBox.checked){
+    if(entry.isIntersecting && navList.offsetLeft<=7 && checkBox.checked){
       navImageContainer.style.display="block";
 
         navImageContainer.innerHTML = imageElement(preload[0]);
@@ -92,7 +92,7 @@ const checkNavigation = (entries)=>{
            document.querySelector(".hamburger>ul>li:nth-of-type(2) a").classList.add("nav-color");
     }
   }
-  if(entry.isIntersecting && navList.offsetLeft<= 1 && !checkBox.checked){
+  if(entry.isIntersecting && navList.offsetLeft<=7 && !checkBox.checked){
        navImageContainer.style.display="none";
     }
 });
