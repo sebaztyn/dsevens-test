@@ -78,6 +78,7 @@ checkBox.addEventListener("click", event=>{
 
 const checkNavigation = (entries)=>{
   const aboutpage = document.querySelector(".about-nav-menu")
+  const ourWorkspage = document.querySelector(".our-work-page")
   entries.forEach(entry => {
     if(entry.isIntersecting && navList.offsetLeft<=7 && checkBox.checked){
       navImageContainer.style.display="block";
@@ -90,6 +91,11 @@ const checkNavigation = (entries)=>{
         navImageContainer.innerHTML = imageElement(preload[1]);
         setTimeout(() =>navImageContainer.lastElementChild.setAttribute("class", "zoom-out"), 10);
            document.querySelector(".hamburger>ul>li:nth-of-type(2) a").classList.add("nav-color");
+    }
+      if(ourWorkspage){
+        navImageContainer.innerHTML = imageElement(preload[3]);
+        setTimeout(() =>navImageContainer.lastElementChild.setAttribute("class", "zoom-out"), 10);
+           document.querySelector(".hamburger>ul>li:nth-of-type(4) a").classList.add("nav-color");
     }
   }
   if(entry.isIntersecting && navList.offsetLeft<=7 && !checkBox.checked){
