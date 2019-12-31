@@ -10,7 +10,7 @@ body {
 
 .our-works-container {
   overflow-x: hidden;
-  margin-bottom: 50vh;
+  margin-bottom: calc(30vh + 180px);
   background: #111517;
   position: relative;
   z-index: 2;
@@ -174,7 +174,7 @@ body {
 
 .our-works-content {
   width: 100%;
-  background-color: #111517;
+  background-color: #1b2a2f;
 }
 
 .our-works-content>h2 {
@@ -220,109 +220,56 @@ body {
   cursor: pointer;
 }
 
-.grid-container {
-  display: grid;
+.works-gallery {
   width: calc(100% - 80px);
-  height: calc(100% - 240px);
-  padding: 120px 40px;
-  grid-template-areas:
-    "headerArea contentArea contentArea"
-    "sub-header sub-header-two sub-header-three";
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 0.7fr 1fr 1fr;
+  margin: auto;
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  -webkit-column-gap: 10px;
+  -moz-column-gap: 10px;
+  column-gap: 10px;
+  padding-bottom: 120px;
+  -webkit-perspective: 1;
 }
 
-.grid-header {
-  grid-area: headerArea;
+.works-gallery>div {
+  margin-bottom: 10px;
+  display: block;
+  width: 100%;
+  height: 100%;
+
 }
 
-.grid-header>h2 {
-  white-space: nowrap;
-  color: #ef0d33;
-  position: relative;
-  display: inline-block;
+.works-gallery>div>a {
+  width: 100%;
+  height: 100%;
+}
+
+.works-gallery>div>a>img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.advert {
+  background-color: #ef0d33;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  text-align: center;
+}
+
+.advert>a {
+  text-decoration: none;
   text-transform: uppercase;
-  font-weight: 500;
-  letter-spacing: 2px;
+  font-weight: 700;
+  letter-spacing: 1px;
   font-family: Oswald, sans-serif;
   line-height: 1;
-  font-size: 28px;
-}
-
-.grid-content {
-  grid-area: contentArea;
-}
-
-.grid-content>p {
-  font-size: 18px;
-  line-height: 1.3;
-  font-weight: 400;
-  letter-spacing: 0;
-  font-family: 'Open Sans';
-  color: #bcbdbd;
-}
-
-.grid-subheader-one {
-  grid-area: sub-header;
-}
-
-.grid-subheader-one>h6,
-.grid-subheader-two>h6,
-.grid-subheader-three>h6 {
-  white-space: nowrap;
-  color: #ef0d33;
+  font-size: 55px;
+  color: #262626;
   position: relative;
-  display: inline-block;
-  text-transform: uppercase;
-  font-size: 14px;
-  line-height: 1.4;
-  font-weight: 600;
-  letter-spacing: 0;
-  font-family: Oswald, sans-serif;
-}
-
-.grid-subheader-one>ul,
-.grid-subheader-two>ul,
-.grid-subheader-three>ul {
-  list-style: none;
-}
-
-.grid-subheader-one>ul>li,
-.grid-subheader-two>ul>li,
-.grid-subheader-three>ul>li {
-  margin-top: 10px;
-}
-
-.grid-subheader-one>ul>li>p,
-.grid-subheader-two>ul>li>p,
-.grid-subheader-three>ul>li>p {
-  text-transform: uppercase;
-  font-size: 10px;
-  line-height: 1;
-  font-weight: 400;
-  letter-spacing: 5px;
-  font-family: Oswald, sans-serif;
-  display: inline-block;
-  color: #ffffff;
-}
-
-.grid-subheader-one>ul>li::before,
-.grid-subheader-two>ul>li::before,
-.grid-subheader-three>ul>li::before {
-  list-style-position: inside;
-  content: "\2022";
-  color: #ef0d33;
-  font-weight: bold;
-  display: inline-block;
-  width: 1em;
-}
-
-.grid-subheader-two {
-  grid-area: sub-header-two;
-}
-
-.grid-subheader-three {
-  grid-area: sub-header-three;
+  white-space: nowrap;
 }
 
 .our-works-footer {
@@ -331,10 +278,12 @@ body {
   bottom: 0px;
   left: 0;
   width: 100vw;
-  height: 50vh;
+  height: 30vh;
   background: #111517;
   display: flex;
   flex-flow: nowrap;
+  padding-top: 90px;
+  padding-bottom: 90px;
 }
 
 .our-works-footer>div {
