@@ -260,8 +260,8 @@ body {
 
 .works-gallery > div > a > div > span {
 	display: inline-block;
-	overflow: hidden;
 	position: relative;
+	overflow: hidden;
 	font-family: Oswald, sans-serif;
 }
 
@@ -396,7 +396,7 @@ body {
 .works-gallery > div.remove-writeup span:first-of-type::after,
 .works-gallery > div.remove-writeup span:last-of-type::after {
 	width: 100%;
-	animation: detail-slide-in 1s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+	animation: detail-slide-in 0.5s cubic-bezier(0.86, 0, 0.07, 1) 0.5s forwards;
 }
 
 /* @keyframes slide-out {
