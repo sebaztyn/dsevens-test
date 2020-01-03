@@ -290,7 +290,7 @@ body {
 .works-gallery > div > a > div > span:first-of-type::before {
 	position: absolute;
 	top: 0;
-	left: 0%;
+	left: 0;
 	right: 0;
 	width: 0;
 	overflow: hidden;
@@ -302,8 +302,7 @@ body {
 .works-gallery > div > a > div > span:first-of-type::after {
 	position: absolute;
 	top: 0;
-	left: 0%;
-	right: 0;
+	left: 0;
 	width: 0;
 	overflow: hidden;
 	background-color: transparent;
@@ -315,7 +314,7 @@ body {
 .works-gallery > div > a > div > span:last-of-type::before {
 	position: absolute;
 	top: 0;
-	left: 0%;
+	left: 0;
 	right: 0;
 	width: 0;
 	overflow: hidden;
@@ -327,25 +326,34 @@ body {
 .works-gallery > div > a > div > span:last-of-type::after {
 	position: absolute;
 	top: 0;
-	left: 0%;
-	right: 0;
+	left: 0;
 	width: 0;
 	overflow: hidden;
 	background-color: transparent;
 	color: #ffffff;
 	content: attr(data-text);
-	z-index: 2;
+	z-index: 1;
 }
 
-@keyframes slide-in {
+@keyframes slide-out {
 	to {
 		width: 100%;
+	}
+}
+@keyframes slide-in {
+	to {
+		width: 0;
 	}
 }
 
 @keyframes slide-from-left {
 	to {
 		left: 100%;
+	}
+}
+@keyframes slide-from-right {
+	to {
+		left: 0;
 	}
 }
 
@@ -362,16 +370,32 @@ body {
 
 .works-gallery > div.writeup span:first-of-type::before,
 .works-gallery > div.writeup span:last-of-type::before {
-	animation: slide-in 1s cubic-bezier(0.86, 0, 0.07, 1) forwards,
+	animation: slide-out 1s cubic-bezier(0.86, 0, 0.07, 1) forwards,
 		slide-from-left 1s cubic-bezier(0.86, 0, 0.07, 1) 1s forwards;
 }
 
 .works-gallery > div.writeup span:first-of-type::after,
 .works-gallery > div.writeup span:last-of-type::after {
+	animation: slide-out 1s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+}
+
+.remove-writeup {
+}
+.works-gallery > div.remove-writeup span:first-of-type::before,
+.works-gallery > div.remove-writeup span:last-of-type::before {
+	width: 100%;
+	left: 100%;
+	animation: slide-from-right 1s cubic-bezier(0.86, 0, 0.07, 1) forwards,
+		slide-in 1s cubic-bezier(0.86, 0, 0.07, 1) 1s forwards;
+}
+
+.works-gallery > div.remove-writeup span:first-of-type::after,
+.works-gallery > div.remove-writeup span:last-of-type::after {
+	width: 100%;
 	animation: slide-in 1s cubic-bezier(0.86, 0, 0.07, 1) forwards;
 }
 
-@keyframes slide-out {
+/* @keyframes slide-out {
 	to {
 		width: 0%;
 	}
@@ -381,9 +405,9 @@ body {
 	to {
 		left: 0%;
 	}
-}
+} */
 
-.works-gallery > div.remove-writeup span:first-of-type::before,
+/* .works-gallery > div.remove-writeup span:first-of-type::before,
 .works-gallery > div.remove-writeup span:last-of-type::before {
 	animation: slide-out 1s cubic-bezier(0.86, 0, 0.07, 1) forwards,
 		slide-from-right 1s cubic-bezier(0.86, 0, 0.07, 1) 1s forwards;
@@ -392,7 +416,7 @@ body {
 .works-gallery > div.remove-writeup span:first-of-type::after,
 .works-gallery > div.remove-writeup span:last-of-type::after {
 	animation: slide-out 1s cubic-bezier(0.86, 0, 0.07, 1) forwards;
-}
+} */
 
 .advert {
 	background-color: #ef0d33;
