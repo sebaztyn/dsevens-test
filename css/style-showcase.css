@@ -1,0 +1,245 @@
+@import "./style.css";
+
+.client-showcase {
+	background-color: #1b2a2f;
+}
+
+.client-showcase > div {
+	max-width: 960px;
+	padding: 120px 0;
+	margin: auto;
+}
+.client-showcase > div > h2 {
+	text-transform: uppercase;
+	font-size: 45px;
+	line-height: 1.13;
+	font-weight: 500;
+	letter-spacing: 3px;
+	font-family: Oswald, sans-serif;
+	color: #ef0d33;
+}
+
+.client-showcase > div > ul {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-auto-rows: 220px;
+	padding-top: 60px;
+}
+.client-showcase > div > ul > li {
+	height: 100%;
+	display: flex;
+}
+.client-showcase > div > ul > li > a {
+	flex: 1;
+	flex-basis: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	color: #ef0d33;
+}
+/* .client-showcase > div > ul > li > a {
+	color: #ef0d33;
+	position: relative;
+} */
+.client-showcase > div > ul > li > a > div {
+	height: 150px;
+	width: 150px;
+	overflow: hidden;
+	position: relative;
+}
+.client-showcase > div > ul > li > a > div > img {
+	height: 100%;
+	width: 100%;
+	display: inline-block;
+	opacity: 1;
+	transition: opacity 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.client-showcase > div > ul > li > a > div > img:last-of-type {
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0;
+	transition: opacity 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.client-showcase > div > ul > li > a:hover > div > img:last-of-type {
+	opacity: 1;
+}
+.client-showcase > div > ul > li > a:hover > div > img:first-of-type {
+	opacity: 0;
+}
+
+.client-showcase > div > ul > li {
+	border-right: solid 1px #bcbdbd;
+	border-bottom: solid 1px #bcbdbd;
+}
+.client-showcase > div > ul > li:nth-of-type(4),
+.client-showcase > div > ul > li:nth-of-type(8),
+.client-showcase > div > ul > li:last-of-type {
+	border-right: none;
+}
+.client-showcase > div > ul > li:nth-of-type(9),
+.client-showcase > div > ul > li:nth-of-type(10),
+.client-showcase > div > ul > li:nth-of-type(11),
+.client-showcase > div > ul > li:last-of-type {
+	border-bottom: none;
+}
+.client-showcase > div > ul > li:last-of-type > a > div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.client-showcase > div > ul > li:last-of-type > a > div > span {
+	color: #ef0d33;
+	text-transform: uppercase;
+	line-height: 1.5;
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	font-family: "Open Sans", sans-serif;
+}
+
+.content > section:last-of-type {
+	background-image: url("../assets/onuk-ink-office-contact-location.jpg");
+	height: 100vh;
+	width: 100%;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.content > section:last-of-type > div {
+	flex: 1;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+.content > section:last-of-type > div > a {
+	/* height: 100%;
+	width: 100%; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #ef0d33;
+	width: 32px;
+	height: 44px;
+	border-radius: 50%;
+	padding: 18px 25px 18px 28px;
+}
+.content > section:last-of-type > div > a > span {
+	/* height: 100%;
+	width: 100%; */
+}
+
+.client-showcase > div > ul > li:last-of-type > a > div::before,
+.client-showcase > div > ul > li:last-of-type > a > div::after {
+	position: absolute;
+	content: "";
+	height: calc(100% - 120px);
+	width: calc(100% - 120px);
+	transition: all 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+}
+.client-showcase > div > ul > li:last-of-type > a > div::before {
+	top: 0;
+	left: 0;
+	border-left: solid 1px #ef0d33;
+	border-top: solid 1px #ef0d33;
+}
+
+.client-showcase > div > ul > li:last-of-type > a > div::after {
+	bottom: 0;
+	right: 0;
+	border-right: solid 1px #ef0d33;
+	border-bottom: solid 1px #ef0d33;
+}
+
+.client-showcase > div > ul > li:last-of-type > a > div:hover::before,
+.client-showcase > div > ul > li:last-of-type > a > div:hover::after {
+	width: 100%;
+	height: 100%;
+}
+
+.home-footer {
+	z-index: 1;
+	position: fixed;
+	bottom: 0px;
+	left: 0;
+	width: 100vw;
+	height: 30vh;
+	background: #111517;
+	display: flex;
+	flex-flow: nowrap;
+	padding-top: 90px;
+	padding-bottom: 90px;
+}
+
+.home-footer > div {
+	flex: 1;
+}
+
+.home-footer > div:nth-of-type(3) {
+	flex: 2;
+}
+
+.home-footer > div > ul {
+	list-style: none;
+	color: #ffffff;
+}
+
+.home-footer > div:first-of-type {
+	text-align: center;
+}
+
+.home-footer > div:first-of-type > a > img {
+	width: 100px;
+}
+
+.home-footer > div:nth-of-type(3) > ul > li {
+	margin-bottom: 15px;
+}
+
+.home-footer > div:nth-of-type(3) > ul > li > a {
+	text-transform: uppercase;
+	font-size: 12px;
+	line-height: 1.4;
+	font-weight: 600;
+	letter-spacing: 1px;
+	font-family: Oswald, sans-serif;
+}
+
+.home-footer > div:nth-of-type(2) > ul > li > a {
+	text-transform: uppercase;
+	font-size: 14px;
+	line-height: 1.4;
+	font-weight: 600;
+	letter-spacing: 0;
+	font-family: Oswald, sans-serif;
+}
+
+.home-footer > div:last-of-type > ul > li > a {
+	position: relative;
+	font-family: Oswald, sans-serif;
+	font-size: 12px;
+	line-height: 1.8;
+	text-transform: uppercase;
+	font-weight: 400;
+	letter-spacing: 3px;
+	display: block;
+}
+
+.home-footer > div > ul > li > a {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+.home-footer > div > ul > li > a:hover {
+	color: #ef0d33;
+}

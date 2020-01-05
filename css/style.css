@@ -31,6 +31,7 @@ body {
 	position: relative;
 	height: 100vh;
 	overflow: hidden;
+	z-index: 2;
 }
 
 .hamburger {
@@ -450,7 +451,7 @@ body {
 	position: relative;
 	text-decoration: none;
 	color: #e58c6a;
-	border: solid 1px #e58c6a;
+	border: solid 0.5px #e58c6a;
 	outline: none;
 	padding: 0 60px;
 	display: inline-block;
@@ -462,24 +463,72 @@ body {
 	transition: opacity 0.5s cubic-bezier(0.86, 0, 0.07, 1) 2.2s,
 		margin-top 0.96s cubic-bezier(0.77, 0, 0.175, 1) 2.2s;
 }
-.header-images > figure:first-of-type > div > a::before {
+.header-images > figure:first-of-type > div > a > span {
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+}
+.header-images > figure:first-of-type > div > a > span::before {
 	content: "";
 	position: absolute;
-	outline: none;
 	left: 0;
 	bottom: 0;
 	height: 0;
 	width: 0;
-	border: 1px solid transparent;
+	display: inline-block;
+	transition: height 0.1s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0.3s;
+	border: none;
+	border-left: solid 2px #321b61;
+}
+.header-images > figure:first-of-type > div > a > span::after {
+	content: "";
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 0;
+	display: inline-block;
+	transition: height 0.1s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0.3s;
+	border: none;
+	border-right: solid 2px #321b61;
+}
+.header-images > figure:first-of-type > div > a > span:hover::after {
+	height: 100%;
+}
+.header-images > figure:first-of-type > div > a > span:hover::before {
+	height: 100%;
+}
+.header-images > figure:first-of-type > div > a::before {
+	content: "";
+	position: absolute;
+	left: 0 !important;
+	top: 0;
+	width: 0;
+	border: none;
+	display: inline-block;
+	border-top: solid 2px #321b61;
+	transition: width 0.3s cubic-bezier(0.755, 0.05, 0.855, 0.06);
+}
+.header-images > figure:first-of-type > div > a::after {
+	content: "";
+	position: absolute;
+	right: 0 !important;
+	bottom: 0;
+	width: 0;
+	display: inline-block;
+	transition: width 0.3s cubic-bezier(0.755, 0.05, 0.855, 0.06);
+	border: none;
+	border-bottom: solid 2px #321b61;
+}
+.header-images > figure:first-of-type > div > a:hover::after {
+	width: 100%;
 }
 .header-images > figure:first-of-type > div > a:hover::before {
-	height: 100%;
 	width: 100%;
-	border: solid 1px #321b61;
-	border-bottom: none;
-	border-left: none;
-	transition: width 0.3s cubic-bezier(0.755, 0.05, 0.855, 0.06),
-		height 0.3s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0.3s;
+}
+.header-images > figure:first-of-type > div > a:hover {
+	border: none;
 }
 .header-images > figure:first-of-type > div > p > span {
 	margin-right: 5px;
@@ -750,4 +799,274 @@ body {
 
 .header-images > figure:nth-of-type(3) > div:last-of-type {
 	background-image: url("../assets/lady-in-the-night.jpeg");
+}
+.content {
+	overflow: hidden;
+	background-color: #f5f5f5;
+	margin-bottom: calc(30vh + 180px);
+	position: relative;
+	z-index: 2;
+}
+/* .content > section {
+	height: 100vh;
+} */
+
+.content > section:first-of-type {
+	color: #ef0d33;
+	background-color: #111517;
+	min-height: 100vh;
+}
+.content > section:first-of-type > div {
+	color: #ef0d33;
+	background-color: #111517;
+	padding: 120px 40px;
+	max-width: 960px;
+	margin: auto;
+	display: grid;
+	grid-template-areas:
+		"headerSection headerSection"
+		"contentBodyOne contentBodyTwo"
+		"footerSection footerSection";
+}
+.content > section:first-of-type > div > h2 {
+	grid-area: headerSection;
+	text-align: center;
+}
+.content > section:first-of-type > div > h2 > span {
+	text-transform: uppercase;
+	font-size: 55px;
+	font-weight: 600;
+	letter-spacing: -2px;
+	font-family: Oswald, sans-serif;
+	line-height: 1.2;
+}
+.content > section:first-of-type > div > div {
+	display: inline-block;
+	font-size: 16px;
+	line-height: 1.8;
+	font-weight: 600;
+	letter-spacing: 0;
+	font-family: "Open Sans", sans-serif;
+	color: #bcbdbd;
+}
+.content > section:first-of-type > div > div:first-of-type {
+	grid-area: contentBodyOne;
+	margin: 30px 20px 0 0;
+}
+.content > section:first-of-type > div > div:nth-of-type(2) {
+	grid-area: contentBodyTwo;
+	margin: 30px 20px 0 0;
+}
+.content > section:first-of-type > div > div:last-of-type {
+	grid-area: footerSection;
+	text-transform: uppercase;
+	font-size: 10px;
+	line-height: 1;
+	font-weight: 400;
+	letter-spacing: 5px;
+	font-family: Oswald, sans-serif;
+	line-height: 1.3;
+	color: #fff;
+	text-align: center;
+	margin: 30px 0 0 0;
+}
+.content > section:nth-of-type(2) > h2 {
+	padding-top: 120px;
+	text-align: center;
+	max-width: 960px;
+	padding-bottom: 30px;
+	margin: auto;
+	font-size: 55px;
+	font-weight: 600;
+	letter-spacing: -2px;
+}
+.content > section:nth-of-type(2) > h2 > span {
+	text-transform: uppercase;
+	font-size: 55px;
+	line-height: 1;
+	font-weight: 600;
+	letter-spacing: -2px;
+	font-family: Oswald, sans-serif;
+}
+.content > section:nth-of-type(2) > h2 > p {
+	text-transform: uppercase;
+	font-size: 12px;
+	line-height: 1.4;
+	font-weight: 600;
+	letter-spacing: 1px;
+	font-family: Oswald, sans-serif;
+	margin-top: 5px;
+}
+
+.content > section:nth-of-type(2) > div {
+	background-color: #f5f5f5;
+	min-height: 70vh;
+	display: flex;
+	position: relative;
+}
+
+.work-writeup span {
+	margin-bottom: 2px;
+	display: inline-block;
+	text-transform: uppercase;
+	font-size: 14px;
+	line-height: 1.4;
+	font-weight: 600;
+	letter-spacing: 0;
+	font-family: Oswald, sans-serif;
+}
+.work-writeup > span {
+	color: #ef0d33;
+}
+.work-writeup > p {
+	font-size: 14px;
+	line-height: 2.15;
+	font-weight: 400;
+	letter-spacing: 1px;
+	font-family: "Open Sans", sans-serif;
+	color: #888;
+	margin: 30px 0 0 0;
+}
+.work-writeup > h3 > span {
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+	text-transform: uppercase;
+	font-weight: 500;
+	letter-spacing: 2px;
+	font-family: Oswald, sans-serif;
+	line-height: 1;
+	font-size: 30px;
+}
+
+.content > section:nth-of-type(2) > div:first-of-type > div {
+	max-width: 960px;
+	margin: auto;
+	display: flex;
+}
+.content > section:nth-of-type(2) > div:first-of-type > div > div {
+	flex-basis: 50%;
+}
+
+.project-list-button {
+	margin-top: 30px;
+	display: inline-block;
+}
+.project-list-button > a {
+	padding: 25px 60px 25px 40px;
+	background: #1b2a2f;
+	color: #fff;
+	display: inline-block;
+	text-transform: uppercase;
+	font-family: Oswald, sans-serif;
+	font-size: 12px;
+	line-height: 1;
+	font-weight: 500;
+	letter-spacing: 3px;
+	text-decoration: none;
+	position: relative;
+}
+
+.content > section:nth-of-type(2) > div:first-of-type,
+.content > section:nth-of-type(2) > div:nth-of-type(2),
+.content > section:nth-of-type(2) > div:nth-of-type(3),
+.content > section:nth-of-type(2) > div:last-of-type {
+	margin-bottom: 90px;
+}
+
+.content > section:nth-of-type(2) > div:nth-of-type(2) > div,
+.content > section:nth-of-type(2) > div:nth-of-type(3) > div,
+.content > section:nth-of-type(2) > div:last-of-type > div {
+	max-width: 960px;
+	margin: auto;
+	display: flex;
+}
+.content > section:nth-of-type(2) > div:nth-of-type(2) > div > div,
+.content > section:nth-of-type(2) > div:nth-of-type(3) > div > div,
+.content > section:nth-of-type(2) > div:last-of-type > div > div {
+	flex-basis: 50%;
+}
+
+.content > section:nth-of-type(2) > div:first-of-type > div > div:first-of-type,
+.content
+	> section:nth-of-type(2)
+	> div:nth-of-type(2)
+	> div
+	> div:first-of-type,
+.content
+	> section:nth-of-type(2)
+	> div:nth-of-type(3)
+	> div
+	> div:first-of-type,
+.content > section:nth-of-type(2) > div:last-of-type > div > div:first-of-type {
+	margin-right: 40px;
+}
+
+.content
+	> section:nth-of-type(2)
+	> div:nth-of-type(2)
+	> div
+	.advert-image
+	> a
+	> div {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 50%;
+	height: 100%;
+	background-image: url("../assets/d-organics-perlm-kernel-oil.jpg");
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.content
+	> section:nth-of-type(2)
+	> div:nth-of-type(3)
+	> div
+	.advert-image
+	> a
+	> div {
+	position: absolute;
+	left: 50%;
+	top: 0;
+	width: 50%;
+	height: 100%;
+	background-image: url("../assets/studio/mbre.jpg");
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.content
+	> section:nth-of-type(2)
+	> div:first-of-type
+	> div
+	.advert-image
+	> a
+	> div {
+	position: absolute;
+	left: 50%;
+	top: 0;
+	width: 50%;
+	height: 100%;
+	background-image: url("../assets/the-roothub-sell-yourself-flyer.jpg");
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.content
+	> section:nth-of-type(2)
+	> div:last-of-type
+	> div
+	.advert-image
+	> a
+	> div {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 50%;
+	height: 100%;
+	background-image: url("../assets/studio/the-evening-church-logo.jpg");
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
