@@ -213,9 +213,9 @@ body {
 	letter-spacing: 3px;
 }
 
-.works-title > button:hover {
+/* .works-title > button:hover {
 	cursor: pointer;
-}
+} */
 
 .works-gallery {
 	width: calc(100% - 80px);
@@ -244,9 +244,7 @@ body {
 	height: 100%;
 	position: relative;
 	overflow: hidden;
-}
-.works-gallery > div > a {
-	cursor: pointer;
+	cursor: none !important;
 }
 
 .works-gallery > div > a > div {

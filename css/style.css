@@ -4,6 +4,7 @@
 } */
 
 :root {
+	cursor: none !important;
 	box-sizing: border-box;
 	--main-font: Raleway, Roboto, sans-serif;
 	--primary-color: #193441;
@@ -25,6 +26,25 @@ body {
 	font-family: Oswald, sans-serif;
 	color: #262626;
 	font-weight: 400;
+	position: relative;
+}
+.pointer {
+	position: fixed;
+	width: 10px;
+	height: 10px;
+	background-color: #ef0d33;
+	border-radius: 50%;
+	z-index: 5000;
+}
+
+.large {
+	width: 65px;
+	height: 65px;
+	background: rgba(239, 13, 51, 0.15) !important;
+	box-shadow: 0 0 30px rgba(239, 13, 51, 0.8);
+}
+a {
+	cursor: none !important;
 }
 
 .home-header {
@@ -66,13 +86,14 @@ body {
 .hamburger > input {
 	margin: 0;
 	position: absolute;
-	top: -1px;
-	left: -1px;
-	width: 101%;
-	height: 101%;
+	top: -50px;
+	left: -50px;
+	width: 400%;
+	height: 400%;
 	bottom: 0;
 	z-index: 5;
 	opacity: 0;
+	cursor: none;
 }
 
 .hamburger > div {
@@ -273,17 +294,19 @@ body {
 	align-items: center;
 }
 
-.scroll-button-container > span {
+.scroll-button-container span {
 	position: relative;
 	display: block;
 	font-family: Oswald, sans-serif;
 	font-size: 12px;
 	line-height: 1;
 	text-transform: uppercase;
+	height: 100%;
+	width: 100%;
+	padding-top: 30px;
+	/* padding: 20px 0 20px 20px; */
 	font-weight: 400;
 	letter-spacing: 3px;
-	margin-right: -3px;
-	margin-bottom: 20px;
 }
 
 .scroll-button-container,
@@ -360,15 +383,28 @@ body {
 	transform: rotate(135deg);
 	transform-origin: left top;
 }
-
+.scroll-button-container a {
+	position: relative;
+	width: 100px;
+	height: 60px;
+	display: inline-block;
+	text-align: center;
+}
 .scroll-button-container a::before {
-	transform: rotate(45deg) translateX(-1px);
-	transform-origin: right bottom;
+	display: inline-block;
+	position: absolute;
+	left: 45%;
+	bottom: 0;
+	transform: translateX(-78%) rotate(45deg);
+	transform-origin: 50% 50%;
 }
 
 .scroll-button-container a::after {
-	transform: rotate(-45deg);
-	transform-origin: left bottom;
+	position: absolute;
+	left: 45%;
+	bottom: 0;
+	transform: translateX(-11%) rotate(-45deg);
+	transform-origin: 50% 50%;
 }
 
 .header-images > figure {
